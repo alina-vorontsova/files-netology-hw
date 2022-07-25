@@ -19,7 +19,6 @@ with open('recipes.txt', encoding='utf-8') as file_object:
 
 def get_shop_list_by_dishes(dishes, person_count):
     shop_dict = {}
-    #ingredients_info = {}
     for item in dishes: 
         if item not in cook_book.keys():
             error = 'Ошибка: введённого Вами блюда нет в кулинарной книге'
@@ -44,5 +43,5 @@ def get_shop_list_by_dishes(dishes, person_count):
 
 # упорно не получается обыграть сценарий с повторением игредиентов, гуглила и спрашивала в дискорде и телеграме 
 # в соответствующих чатах - тоже не смогли помочь. Если оставляю в третьем цикле, то не прибавляется значение к повторяющемуся
-# ингредиенту, если ставлю в циклы раньше, то количества неверные уже у всех игнредиентов. 
+# ингредиенту, если ставлю в циклы раньше, то количества неверные уже у всех ингредиентов. 
 pprint(get_shop_list_by_dishes(['Омлет', 'Фахитос'], 2), sort_dicts=False) 
