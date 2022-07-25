@@ -25,7 +25,6 @@ def get_shop_list_by_dishes(dishes, person_count):
             return error
         for key, values in cook_book.items():
             if item in key:
-                ingredients_info = {}
                 for value in values:
                     ingredients_info = {}
                     shop_dict_ingredient = value['ingredient_name']
