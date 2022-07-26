@@ -51,7 +51,7 @@ texts_list = os.listdir(full_path_to_texts)
 all_texts = {}
 
 for file in texts_list:
-    file_path = os.path.join(CURRENT_DIR, TEXTS_DIR, file)
+    file_path = os.path.join(full_path_to_texts, file)
     with open(file_path, 'r', encoding = 'utf-8') as file_to_read:
         list_of_strings = []
         for line in file_to_read:
