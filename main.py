@@ -19,7 +19,7 @@ with open('recipes.txt', encoding='utf-8') as file_object:
         cook_book[dish_name] = ingredients_list
         file_object.readline()
 
-#pprint(cook_book, sort_dicts=False, width=100)
+# pprint(cook_book, sort_dicts=False, width=100)
 
 # Задание 2
 
@@ -37,8 +37,8 @@ def get_shop_list_by_dishes(dishes, person_count):
             return error
     return shop_dict
 
-#pprint(get_shop_list_by_dishes(['Омлет', 'Утка по-пекински', 'Запеченный картофель'], 3), sort_dicts=False)
-#pprint(get_shop_list_by_dishes(['Омлет', 'Фахитос'], 2), sort_dicts=False) 
+# pprint(get_shop_list_by_dishes(['Омлет', 'Утка по-пекински', 'Запеченный картофель'], 3), sort_dicts=False)
+# pprint(get_shop_list_by_dishes(['Омлет', 'Фахитос'], 2), sort_dicts=False) 
 
 # Задание 3
 
