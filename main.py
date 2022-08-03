@@ -41,24 +41,13 @@ def get_shop_list_by_dishes(dishes, person_count):
 
 # Задание 3
 
-def get_path_to_texts():
+def get_texts():
     TEXTS_DIR = 'texts'
     full_path_to_texts = os.path.join(os.getcwd(), TEXTS_DIR)
-    return full_path_to_texts
-
-def get_path_to_sorted_file():
-    SORTED_FILE = 'sorted_texts.txt'
-    sorted_full_path = os.path.join(os.getcwd(), SORTED_FILE)
-    return sorted_full_path
-
-def get_texts_list():
-    texts_list = os.listdir(get_path_to_texts()) 
-    return texts_list
-
-def get_sorted_texts():
+    texts_list = os.listdir(full_path_to_texts) 
     all_texts = {}
-    for file in get_texts_list():
-        file_path = os.path.join(get_path_to_texts(), file)
+    for file in texts_list:
+        file_path = os.path.join(full_path_to_texts, file)
         with open(file_path, 'r', encoding = 'utf-8') as file_to_read:
             list_of_strings = []
             for line in file_to_read:
@@ -68,9 +57,11 @@ def get_sorted_texts():
     return all_texts
 
 def write_down_sorted_texts():
-    all_texts = get_sorted_texts()
+    SORTED_FILE = 'sorted_texts.txt'
+    sorted_full_path = os.path.join(os.getcwd(), SORTED_FILE)
+    all_texts = get_texts()
     sorted_len = sorted(all_texts.keys())
-    with open(get_path_to_sorted_file(), 'w', encoding = 'utf-8') as file_to_write:
+    with open(sorted_full_path, 'w', encoding = 'utf-8') as file_to_write:
         for i in sorted_len:
             file_to_write.write(all_texts[i]['name'] + '\n' + all_texts[i]['length'] + '\n' + all_texts[i]['text'] + '\n')
     return 'Sorted texts were written down.'
